@@ -1,0 +1,20 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/data/data_ingestion.py
+    deps:
+    - path: src/data/data_ingestion.py
+      hash: md5
+      md5: 6cd33c339b8f595e341ac35c6b01eaff
+      size: 3648
+    params:
+      params.yaml:
+        data_ingestion.frac: 1
+        data_ingestion.random_state: 42
+        data_ingestion.test_size: 0.2
+    outs:
+    - path: data/external
+      hash: md5
+      md5: 0b8c38a1cea64dbc72688837dfcb40f1.dir
+      size: 8915443
+      nfiles: 2
