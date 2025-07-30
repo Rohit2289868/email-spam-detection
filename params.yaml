@@ -5,3 +5,7 @@ data_ingestion:
 
 feature_engineering:
   max_features: 500
+
+model_building:
+  n_estimators: 300
+  min_samples_split: 2

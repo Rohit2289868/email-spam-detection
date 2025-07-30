@@ -57,3 +57,28 @@ stages:
       md5: be8548795044940e40b17ab0e8b36548.dir
       size: 5718542
       nfiles: 2
+    - path: models/vectorizer.pkl
+      hash: md5
+      md5: 6ba4db2f2445d65dfb26f687f397df7f
+      size: 14441
+  model_building:
+    cmd: python src/models/model_building.py
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: be8548795044940e40b17ab0e8b36548.dir
+      size: 5718542
+      nfiles: 2
+    - path: src/models/model_building.py
+      hash: md5
+      md5: e0030f13f95cceb0d8d729bcf5c49dfb
+      size: 2715
+    params:
+      params.yaml:
+        model_building.min_samples_split: 2
+        model_building.n_estimators: 300
+    outs:
+    - path: models/model.pkl
+      hash: md5
+      md5: be5df6140fc82b13cf6f0decb5701094
+      size: 14850468
